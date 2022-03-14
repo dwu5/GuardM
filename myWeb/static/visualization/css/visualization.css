@@ -1,0 +1,23 @@
+body {
+    height: 100%;
+    background-image: url('../image/Mystic.jpg');
+    background-repeat: no-repeat;
+}
+
+#gallery-header {
+    padding-bottom: 15px;
+}
+
+.gallery-row {
+    height: 150px;
+    padding-bottom: 10px;
+}
+
+.show-line-label {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+#img-1 {
+    width: 100px;
+}

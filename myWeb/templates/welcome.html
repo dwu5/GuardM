@@ -1,0 +1,45 @@
+{% load static %}
+<html lang="zh-CN">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'public/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'welcome/css/welcome.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/footer.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/buttons.css' %}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'public/css/jumbotron-narrow.css' %}" rel="stylesheet"/>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="{% static 'public/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/bootstrap.min.js' %}"></script>
+
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="welcome-poster"></div>
+
+
+        <div class="welcome-button">
+            <a href="/login/" class="button button-3d button-primary button-pill">Enter now!</a>
+        </div>
+
+
+        <div class="my-footer">
+            Copyright &copy; 2022 github.com/dwu5 All Right Reserved
+        </div>
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,172 @@
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'public/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'visualization/css/visualization.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/nav-bar.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/buttons.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/footer.css' %}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'public/css/jumbotron-narrow.css' %}" rel="stylesheet"/>
+
+    <!-- Visualization Jquery Plugin files-->
+    <link href="{% static 'visualization/plugin/css/animate.css' %}" rel="stylesheet"/>
+    <link href="{% static 'visualization/plugin/css/gallery.css' %}" rel="stylesheet"/>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="{% static 'public/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/bootstrap.min.js' %}"></script>
+
+    <title>训练结果可视化</title>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="listitem"><a href="/index/" class="nav-bar">Home</a></li>
+                    <li role="listitem"><a href="/index_use/" class="nav-bar">Upload</a></li>
+                    <li role="listitem"><a href="/index_to_progress/" class="nav-bar">Progress</a></li>
+                    <li role="listitem" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px">
+                            Account
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="listitem" class="active"><a href="/visualization/" class="nav-bar">More</a></li>
+                            <li role="listitem"><a href="/logout/" class="nav-bar">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <p><span style="font-size: 34px;color: #1c3558">GuardM</span><span style="color: #444444; padding-left: 50px">{{ request.session.user_name }}，欢迎回来!</span></p>
+        </div>
+
+
+		<div class="container" align="center">
+            <div id="gallery-header">
+                <h1 class="animated fadeInRight" align="center" style="color: #444444">训练结果</h1>
+				<p class="animated fadeInLeft" align="center" style="color: #444444; font-size: 15px">
+                    为您展示秘密图像、载体图像以及载密图像
+                </p>
+			</div>
+
+			<div class="container">
+
+                <div class="gallery-row">
+                    <div class="show-line-label animated fadeInRight">  <!--LOGO标签文本-->
+                        Secret Image
+                    </div>
+                    <div id="gallery-image"> <!--LOGO图像展示-->
+                         <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
+                             <div class="animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                            <div class="p-4 animated umScaleIn">
+                                <img id="img-1" src="/media/userImage/secret_image.png">
+                            </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                             </div>
+                         </div>
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-row">
+                    <div class="show-line-label animated fadeInRight">  <!--输入标签文本-->
+                        Your INPUT
+                    </div>
+                    <div id="gallery-image" class=""> <!--输入图像展示-->
+
+                         <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
+                             <div class="animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/cover_image/0_label_92.png">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/cover_image/1_label_45.png">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/cover_image/2_label_49.png">
+                             </div>
+                         </div>
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/cover_image/3_label_55.png">
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-row">
+                    <div class="show-line-label animated fadeInRight">  <!--载密标签文本-->
+                        OUTPUT
+                    </div>
+                    <div id="gallery-image"> <!--载密图像展示-->
+                         <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
+                             <div class="animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/trigger/0_label_92_epoch_1.png">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/trigger/1_label_45_epoch_1.png">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/trigger/2_label_49_epoch_1.png">
+                             </div>
+                         </div>
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/trigger/3_label_55_epoch_1.png">
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="my-footer">
+            Copyright &copy; 2022 github.com/dwu5 All rights reserved
+        </div>
+
+
+    </div>
+</body>
+</html>

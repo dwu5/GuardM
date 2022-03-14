@@ -1,0 +1,33 @@
+body {
+      height: 100%;
+      background-image: url('../image/welcome1.png');
+      background-repeat: no-repeat;
+}
+
+.welcome-poster{
+    width: 650px;
+    height: 251px;
+    border-radius: 50px;
+    background-color: black;
+    background-image: url('../image/protect.png');
+    background-repeat: no-repeat;
+    position: absolute;
+            top: 40%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+.welcome-button{
+    position: absolute;
+            top: 70%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}

@@ -1,0 +1,23 @@
+body {
+    height: 100%;
+    background-image: url('../image/Mystic.jpg');
+    background-repeat: no-repeat;
+}
+
+form a{
+    display: inline-block;
+    margin-top:25px;
+    line-height: 10px;
+}
+
+#progress-table{
+    position: absolute;
+            width: 100%;
+            top: 40%;
+            left: 74%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}

@@ -1,0 +1,33 @@
+system:
+  device: cuda
+  GPU: 0
+dataset:
+  dataset_name: ImageNet
+  dataroot: 'E:\django-alg-1.0\miniImageNetPre'
+  dataset_csv: 'E:\django-alg-1.0'
+  num_classes: 100
+watermark:
+  logo_root: 'complexity_exp/data/logo'
+  ckp_path: 'complexity_exp/dnn_ckp/'
+  wm_num: 100
+  wm_batchsize: 4
+  wm_resize: 40
+train:
+  seed: 2022
+  fine_tuning: False
+  start_epoch: 1
+  num_epochs: 100
+  batchsize: 8
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 1e-4
+  loss_hyper_param: [3,5,1,0.1]
+  print_freq: 10
+  dataloader:
+    resize: 40
+    drop_last: True
+    shuffle: True
+    pin_memory: False
+results:
+#  run_folder: complexity_exp/runs
+  run_folder: complexity/../media/userImage/runs

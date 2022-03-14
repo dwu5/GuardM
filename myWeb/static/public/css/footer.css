@@ -1,0 +1,9 @@
+.my-footer{
+    position: absolute;
+    height: 50px;
+    bottom: 0;
+    color: rgba(77,91,96,0.62);
+    text-align: center;
+    line-height: 50px;
+    width: 800px
+}

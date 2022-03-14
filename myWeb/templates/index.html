@@ -1,0 +1,84 @@
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'public/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'index/css/index.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/nav-bar.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/buttons.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/footer.css' %}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'public/css/jumbotron-narrow.css' %}" rel="stylesheet"/>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="{% static 'public/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/bootstrap.min.js' %}"></script>
+
+    {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+            {% endfor %}
+        </script>
+    {% endif %}
+
+    <title>首页</title>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="listitem" class="active"><a href="/index/" class="nav-bar">Home</a></li>
+                    <li role="listitem"><a href="/index_use/" class="nav-bar">Upload</a></li>
+                    <li role="listitem"><a href="/index_to_progress/" class="nav-bar">Progress</a></li>
+                    <li role="listitem" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px">
+                            Account
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="listitem"><a href="/visualization/" class="nav-bar">More</a></li>
+                            <li role="listitem"><a href="/logout/" class="nav-bar">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <p><span style="font-size: 34px;color: #1c3558">GuardM</span><span style="color: #444444; padding-left: 50px">{{ request.session.user_name }}，欢迎回来!</span></p>
+        </div>
+
+
+        <div>
+            <div class="index-poster"></div>
+            <div class="index-button">
+                <div class="index-button-1">
+                    <a href="/index_use/" class="button button-3d button-primary button-pill">开始使用</a>
+                </div>
+                <div class="index-button-2">
+                    <a href="/index_to_progress/" class="button button-3d button-primary button-pill">服务进度</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="my-footer">
+            Copyright &copy; 2022 github.com/dwu5 All rights reserved
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</html>

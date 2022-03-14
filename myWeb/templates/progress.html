@@ -1,0 +1,112 @@
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'public/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'progress/css/progress.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/nav-bar.css' %}" rel="stylesheet"/>
+    <link href="{% static 'public/css/footer.css' %}" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'public/css/jumbotron-narrow.css' %}" rel="stylesheet"/>
+
+    <!-- jQuery table CSS -->
+    <link rel="stylesheet" href="{% static 'progress/plugin/css/reset.css' %}"> <!-- CSS reset -->
+	<link rel="stylesheet" href="{% static 'progress/plugin/css/style.css' %}"> <!-- Gem style -->
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="{% static 'public/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{% static 'public/js/bootstrap.min.js' %}"></script>
+{#    <script>#}
+{#        window.setTimeout(function(){#}
+{#	    window.location.reload();#}
+{#    },500);#}
+{#    </script>#}
+
+    <title>训练进度</title>
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="listitem"><a href="/index/" class="nav-bar">Home</a></li>
+                    <li role="listitem"><a href="/index_use/" class="nav-bar">Upload</a></li>
+                    <li role="listitem" class="active"><a href="/index_to_progress/" class="nav-bar">Progress</a></li>
+                    <li role="listitem" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="font-size: 15px">
+                            Account
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="listitem"><a href="/visualization/" class="nav-bar">More</a></li>
+                            <li role="listitem"><a href="/logout/" class="nav-bar">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <p><span style="font-size: 34px;color: #1c3558">GuardM</span><span style="color: #444444; padding-left: 50px">{{ request.session.user_name }}，欢迎回来!</span></p>
+        </div>
+
+
+        <div align="center">
+            <h1 style="color: #444444">服务进展</h1>
+{#            <p style="font-size: 20px; color: #444444">#}
+{#                {{ request.session.user_name }}，您的服务状态为：{{ status }}#}
+{#            </p>#}
+{#            <p style="font-size: 20px; color: #444444">#}
+{#                epoch: {{ myepoch }}#}
+{#            </p>#}
+        </div>
+
+
+        <div id="progress-table">
+            <section id="cd-table">
+            <header class="cd-table-column">
+                <h2 id="reset-h2">Features</h2>
+                <ul id="reset-ul" style="list-style: none;">
+                    <li id="reset-li">Status</li>
+                    <li id="reset-li">File</li>
+                    <li id="reset-li">Epoch</li>
+                </ul>
+            </header>
+
+            <div class="cd-table-container">
+                <div class="cd-table-wrapper">
+
+                    <div class="cd-table-column">
+                        <h2 id="reset-h2">VALUE</h2>
+                        <ul id="reset-ul" style="list-style: none;">
+                            <li id="reset-li">{{ status }}</li>
+                            <li id="reset-li">{{ file_name }}</li>
+                            <li id="reset-li">{{ show_epoch }}</li>
+                        </ul>
+                    </div> <!-- cd-table-column -->
+
+
+                </div> <!-- cd-table-wrapper -->
+
+            </div> <!-- cd-table-container -->
+        </section> <!-- cd-table -->
+        </div>
+
+
+        <div class="my-footer">
+            Copyright &copy; 2022 github.com/dwu5 All rights reserved
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
