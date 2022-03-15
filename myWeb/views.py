@@ -87,6 +87,8 @@ def register(request):
                 new_user.email = email
                 new_user.save()
 
+                messages.success(request, "注册成功！")
+
                 return redirect('/login/')
         else:
             return render(request, 'register.html', locals())

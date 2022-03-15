@@ -68,6 +68,7 @@ set_training_completed.short_description = "Mark selected users as Training comp
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
+    readonly_fields = ("name", "password", "email", "file",)
     list_display = ('name', 'email', 'c_time', 'status', 'file')
     actions = [training_start_switch, set_model_not_uploaded, set_training_not_started, set_training_in_progress,
                set_training_completed]
