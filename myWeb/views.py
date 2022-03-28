@@ -148,7 +148,7 @@ def upload(request):
 def start_training(request):
     messages.success(request, "开始训练！")
     wm_main()
-    return render(request, 'draft.html', locals())
+    return render(request, 'temp.html', locals())
 
 
 # 查看训练进度

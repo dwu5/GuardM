@@ -14,5 +14,5 @@ conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 
 3.安装skimage：pip install scikit-image
 
-
+git config --global http.sslVerify "false"
 
