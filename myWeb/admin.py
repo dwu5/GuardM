@@ -35,7 +35,7 @@ def training_start_switch(modeladmin, request, queryset):
 
     wm_main()
     messages.success(request, "开始训练！")
-    return render(request, 'draft.html', locals())
+    return render(request, 'temp.html', locals())
 
 
 def set_model_not_uploaded(modeladmin, request, queryset):
