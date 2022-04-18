@@ -1,6 +1,7 @@
 import os
 
 from django.contrib import messages
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from complexity_exp.wm_main import wm_main
@@ -176,4 +177,15 @@ def index_to_progress(request):
 
 # 训练结果可视化
 def visualization(request):
-    return render(request, 'visualization.html', locals())
+    username = request.session['user_name']
+    user = models.User.objects.get(name=username)
+
+    if user.status == 'D':
+        return render(request, 'visualization.html', locals())
+    else:
+        return index_to_progress(request)
+
+
+# TensorBoard
+def tb(request):
+    return redirect('http://localhost:6006')

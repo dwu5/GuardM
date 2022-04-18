@@ -13,4 +13,5 @@ urlpatterns = [
     path('start_training/', views.start_training),
     path('index_to_progress/', views.index_to_progress),
     path('visualization/', views.visualization),
+    path('tb/', views.tb)
 ]

@@ -480,7 +480,7 @@ def test(run_folder, trigger_floder):
 
 
 # myepoch = 0
-myepoch1 = {"xjh": 0}
+myepoch1 = {"wd": 0}
 
 
 def wm_main():
@@ -502,7 +502,7 @@ def wm_main():
     for epoch in range(cfg.train.start_epoch, cfg.train.num_epochs + 1):  # 注意epoch边界
 
         # myepoch = myepoch + 1
-        myepoch1["xjh"] += 1
+        myepoch1["wd"] += 1
 
         train_losses_dict, train_metrics_dict = train(epoch)
 

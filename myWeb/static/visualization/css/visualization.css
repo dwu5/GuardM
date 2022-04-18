@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    background-image: url('../image/Mystic.jpg');
+    background-image: url('../image/viz_tb.jpg');
     background-repeat: no-repeat;
 }
 
@@ -20,4 +20,35 @@ body {
 
 #img-1 {
     width: 100px;
+}
+
+#tb {
+    width: 100%;
+    height: 100%;
+}
+
+.my-frame {
+    width: 100%;
+    /*margin-top: 50px;*/
+}
+
+.viz-button {
+    margin-bottom: 10px;
+}
+
+#viz_button_left {
+    margin-right: 100px;
+}
+
+#viz_button_right{
+    margin-left: 100px;
+}
+
+#viz_footer {
+    height: 50px;
+    bottom: 0;
+    color: rgba(77,91,96,0.62);
+    text-align: center;
+    line-height: 50px;
+    width: 800px
 }

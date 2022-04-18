@@ -24,6 +24,21 @@
     <script type="text/javascript" src="{% static 'public/js/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'public/js/popper.js' %}"></script>
     <script type="text/javascript" src="{% static 'public/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript">
+        function show_image()
+        {
+            document.getElementById("show_image").style.display="block";
+
+            document.getElementById("show_chart").style.display="none";
+        }
+
+        function show_chart()
+        {
+            document.getElementById("show_image").style.display="none";
+
+            document.getElementById("show_chart").style.display="block";
+        }
+    </script>
 
     <title>训练结果可视化</title>
 </head>
@@ -53,105 +68,141 @@
             <p><span style="font-size: 34px;color: #1c3558">GuardM</span><span style="color: #444444; padding-left: 50px">{{ request.session.user_name }}，欢迎回来!</span></p>
         </div>
 
+        <div class="viz-button" align="center">
+            <a onclick="show_image()" id="viz_button_left" class="button button-3d button-primary button-pill">显示图像</a>
+            <a onclick="show_chart()" id="viz_button_right" class="button button-3d button-primary button-pill">显示图表</a>
+        </div>
 
-		<div class="container" align="center">
+
+		<div id="show_image" class="container" align="center">
             <div id="gallery-header">
                 <h1 class="animated fadeInRight" align="center" style="color: #444444">训练结果</h1>
-				<p class="animated fadeInLeft" align="center" style="color: #444444; font-size: 15px">
-                    为您展示秘密图像、载体图像以及载密图像
+				<p id="show_image" class="animated fadeInLeft" align="center" style="color: #444444; font-size: 15px">
+                    为您展示秘密图像、载体图像、载密图像以及提取水印
                 </p>
 			</div>
 
 			<div class="container">
 
-                <div class="gallery-row">
+                <div id="show_image"  class="gallery-row">
                     <div class="show-line-label animated fadeInRight">  <!--LOGO标签文本-->
-                        Secret Image
+                        秘密图像
                     </div>
                     <div id="gallery-image"> <!--LOGO图像展示-->
                          <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
                              <div class="animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                                 <img id="img-1" src="/media/userImage/secret_image/secret_1.jpg">
                              </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                             <div class="p-4 animated umScaleIn">
-                                <img id="img-1" src="/media/userImage/secret_image.png">
+                                <img id="img-1" src="/media/userImage/secret_image/secret_2.jpg">
                             </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                                 <img id="img-1" src="/media/userImage/secret_image/secret_3.jpg">
                              </div>
                          </div>
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/secret_image.png">
+                                 <img id="img-1" src="/media/userImage/secret_image/secret_4.jpg">
                              </div>
                          </div>
                     </div>
                 </div>
 
 
-                <div class="gallery-row">
+                <div id="show_image"  class="gallery-row">
                     <div class="show-line-label animated fadeInRight">  <!--输入标签文本-->
-                        Your INPUT
+                        载体图像
                     </div>
                     <div id="gallery-image" class=""> <!--输入图像展示-->
 
                          <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
                              <div class="animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/cover_image/0_label_92.png">
+                                 <img id="img-1" src="/media/userImage/cover_image/cover_1.jpg">
                              </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/cover_image/1_label_45.png">
+                                 <img id="img-1" src="/media/userImage/cover_image/cover_2.jpg">
                              </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/cover_image/2_label_49.png">
+                                 <img id="img-1" src="/media/userImage/cover_image/cover_3.jpg">
                              </div>
                          </div>
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/cover_image/3_label_55.png">
+                                 <img id="img-1" src="/media/userImage/cover_image/cover_4.jpg">
                              </div>
                          </div>
                     </div>
                 </div>
 
 
-                <div class="gallery-row">
+                <div id="show_image"  class="gallery-row">
                     <div class="show-line-label animated fadeInRight">  <!--载密标签文本-->
-                        OUTPUT
+                        载密图像
                     </div>
                     <div id="gallery-image"> <!--载密图像展示-->
                          <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
                              <div class="animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/trigger/0_label_92_epoch_1.png">
+                                 <img id="img-1" src="/media/userImage/trigger/output_1.jpg">
                              </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/trigger/1_label_45_epoch_1.png">
+                                 <img id="img-1" src="/media/userImage/trigger/output_2.jpg">
                              </div>
                          </div>
 
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/trigger/2_label_49_epoch_1.png">
+                                 <img id="img-1" src="/media/userImage/trigger/output_3.jpg">
                              </div>
                          </div>
                          <div class="col-md-3 col-sm-6">
                              <div class="p-4 animated umScaleIn">
-                                 <img id="img-1" src="/media/userImage/trigger/3_label_55_epoch_1.png">
+                                 <img id="img-1" src="/media/userImage/trigger/output_4.jpg">
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+
+                <div id="show_image"  class="gallery-row">
+                    <div class="show-line-label animated fadeInRight">  <!--提取水印文本-->
+                        提取水印
+                    </div>
+                    <div id="gallery-image"> <!--提取水印展示-->
+                         <div class="col-md-3 col-sm-6 p-4 animated umScaleIn"> {# 针对平板设备的 .col-sm-* 类 #}
+                             <div class="animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/extraction/extract_1.jpg">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/extraction/extract_2.jpg">
+                             </div>
+                         </div>
+
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/extraction/extract_3.jpg">
+                             </div>
+                         </div>
+                         <div class="col-md-3 col-sm-6">
+                             <div class="p-4 animated umScaleIn">
+                                 <img id="img-1" src="/media/userImage/extraction/extract_4.jpg">
                              </div>
                          </div>
                     </div>
@@ -162,7 +213,16 @@
         </div>
 
 
-        <div class="my-footer">
+        <div id="show_chart" class="my-frame" hidden="hidden">
+            <h1 class="animated fadeInRight" align="center" style="color: #444444">训练结果</h1>
+            <p class="animated fadeInLeft" align="center" style="color: #444444; font-size: 15px">
+                为您展示可视化图表
+            </p>
+            <iframe id="tb" class="animated umScaleIn" src="http://localhost:6006"></iframe>
+        </div>
+
+
+        <div id="viz_footer">
             Copyright &copy; 2022 github.com/dwu5 All rights reserved
         </div>
 
