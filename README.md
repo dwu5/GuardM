@@ -6,8 +6,6 @@
 运行命令python manage.py createsuperuser，创建超级用户（管理员）；
 运行命令python manage.py runserver，启动服务器；
 #
-
-
 2022年2月2日10:37:00
 
 登录注册子系统（首页创建未设计，登录无验证码，注册无邮箱验证）；
