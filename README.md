@@ -5,7 +5,7 @@
 运行命令python manage.py migrate，更新数据库；
 运行命令python manage.py createsuperuser，创建超级用户（管理员）；
 运行命令python manage.py runserver，启动服务器；
-
+#
 
 
 2022年2月2日10:37:00
