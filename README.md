@@ -1,6 +1,5 @@
 # GuardM
-深度学习模型知识产权保护系统
------------------------------
+# 深度学习模型知识产权保护系统
 
 运行命令python manage.py makemigrations，创建模型，记录数据迁移工作；
 运行命令python manage.py migrate，更新数据库；
