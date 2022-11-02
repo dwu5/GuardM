@@ -1,0 +1,13 @@
+python==3.7.9
+django==3.2.11
+pytorch
+torchmetrics
+pandas
+seaborn
+thop
+torchsummary
+sklearn
+scikit-image
+matplotlib
+tensorboardX
+yacs
